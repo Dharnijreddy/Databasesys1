@@ -1,0 +1,87 @@
+-- Insert statements for Suppliers Table
+INSERT INTO Suppliers (SupplierID, SupplierName, SupplierLocation) VALUES
+(1, 'Supplier A', 'Location A'),
+(2, 'Supplier B', 'Location B'),
+(3, 'Supplier C', 'Location C'),
+(4, 'Supplier D', 'Location D'),
+(5, 'Supplier E', 'Location E'),
+(6, 'Supplier F', 'Location F'),
+(7, 'Supplier G', 'Location G'),
+(8, 'Supplier H', 'Location H');
+
+-- Insert statements for Items Table
+INSERT INTO Items (ItemID, ProductName, SupplierID, Quantity, UnitCost, ShipmentDate) VALUES
+(1, 'Product A', 1, 100, 10.50, '2024-02-12'),
+(2, 'Product B', 2, 150, 15.75, '2024-02-13'),
+(3, 'Product C', 3, 200, 20.00, '2024-02-14'),
+(4, 'Product D', 4, 50, 5.25, '2024-02-15'),
+(5, 'Product E', 5, 120, 12.30, '2024-02-16'),
+(6, 'Product F', 6, 80, 8.75, '2024-02-17'),
+(7, 'Product G', 7, 90, 9.50, '2024-02-18'),
+(8, 'Product H', 8, 110, 11.25, '2024-02-19');
+
+-- Insert statements for Categories Table
+INSERT INTO Categories (CategoryID, CategoryName) VALUES
+(1, 'Category A'),
+(2, 'Category B'),
+(3, 'Category C'),
+(4, 'Category D'),
+(5, 'Category E'),
+(6, 'Category F'),
+(7, 'Category G'),
+(8, 'Category H');
+
+-- Insert statements for Inventory Table
+INSERT INTO Inventory (ItemID, ItemDescription, CurrentStock, ReorderLevel, Category) VALUES
+(1, 'Item A Description', 80, 20, 1),
+(2, 'Item B Description', 120, 30, 2),
+(3, 'Item C Description', 150, 40, 3),
+(4, 'Item D Description', 60, 15, 4),
+(5, 'Item E Description', 90, 25, 5),
+(6, 'Item F Description', 110, 35, 6),
+(7, 'Item G Description', 70, 18, 7),
+(8, 'Item H Description', 100, 28, 8);
+
+-- Insert statements for Orders Table
+INSERT INTO Orders (OrderID, CustomerName, OrderDate, Quantity, UnitCost, ShipmentDate) VALUES
+(1, 'Customer A', '2024-02-12', 10, 5.00, '2024-02-15'),
+(2, 'Customer B', '2024-02-13', 20, 7.50, '2024-02-16'),
+(3, 'Customer C', '2024-02-14', 15, 8.00, '2024-02-17'),
+(4, 'Customer D', '2024-02-15', 30, 4.50, '2024-02-18'),
+(5, 'Customer E', '2024-02-16', 25, 6.20, '2024-02-19'),
+(6, 'Customer F', '2024-02-17', 18, 9.25, '2024-02-20'),
+(7, 'Customer G', '2024-02-18', 22, 11.00, '2024-02-21'),
+(8, 'Customer H', '2024-02-19', 12, 10.75, '2024-02-22');
+
+-- Insert statements for Customers Table
+INSERT INTO Customers (CustomerID, CustomerName) VALUES
+(1, 'Customer A'),
+(2, 'Customer B'),
+(3, 'Customer C'),
+(4, 'Customer D'),
+(5, 'Customer E'),
+(6, 'Customer F'),
+(7, 'Customer G'),
+(8, 'Customer H');
+
+-- Insert statements for Transactions Table
+INSERT INTO Transactions (TransactionID, Amount, PaymentMode, TransactionDate) VALUES
+(1, 100.00, 'Credit Card', '2024-02-12'),
+(2, 150.50, 'PayPal', '2024-02-13'),
+(3, 200.25, 'Bank Transfer', '2024-02-14'),
+(4, 75.80, 'Cash', '2024-02-15'),
+(5, 120.00, 'Credit Card', '2024-02-16'),
+(6, 85.50, 'PayPal', '2024-02-17'),
+(7, 90.25, 'Bank Transfer', '2024-02-18'),
+(8, 110.75, 'Cash', '2024-02-19');
+
+-- Insert statements for Feedback Table
+INSERT INTO Feedback (FeedbackID, OrderID, FeedbackText, Rating) VALUES
+(1, 1, 'Excellent service and quality!', 5),
+(2, 2, 'Fast delivery, great product!', 4),
+(3, 3, 'Satisfied with the order, but packaging could be better.', 3),
+(4, 4, 'Product was damaged during shipment.', 2),
+(5, 5, 'Impressed with the customer support.', 4),
+(6, 6, 'Good value for money.', 4),
+(7, 7, 'Timely delivery and good communication.', 5),
+(8, 8, 'Average experience, expected better.', 3);

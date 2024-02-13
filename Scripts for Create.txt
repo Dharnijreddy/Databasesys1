@@ -1,0 +1,65 @@
+-- Suppliers Table
+CREATE TABLE Suppliers (
+  SupplierID INT PRIMARY KEY,
+  SupplierName VARCHAR(255),
+  SupplierLocation VARCHAR(255)
+);
+
+-- Items Table
+CREATE TABLE Items (
+  ItemID INT PRIMARY KEY,
+  ProductName VARCHAR(255),
+  SupplierID INT FOREIGN KEY REFERENCES Suppliers(SupplierID),
+  Quantity INT,
+  UnitCost DECIMAL(10, 2),
+  ShipmentDate DATE
+);
+
+-- Categories Table
+CREATE TABLE Categories (
+  CategoryID INT PRIMARY KEY,
+  CategoryName VARCHAR(255)
+);
+
+-- Inventory Table
+CREATE TABLE Inventory (
+  ItemID INT PRIMARY KEY,
+  ItemDescription TEXT,
+  CurrentStock INT CHECK (CurrentStock >= 0),
+  ReorderLevel INT CHECK (ReorderLevel > 0),
+  Category int,
+  FOREIGN KEY (ItemID) REFERENCES Items(ItemID),
+  FOREIGN KEY (Category) REFERENCES Categories(CategoryID)
+);
+
+-- Orders Table
+CREATE TABLE Orders (
+  OrderID INT PRIMARY KEY,
+  CustomerName VARCHAR(255),
+  OrderDate DATE,
+  Quantity INT,
+  UnitCost DECIMAL(10, 2),
+  ShipmentDate DATE
+);
+
+-- Customers Table
+CREATE TABLE Customers (
+  CustomerID INT PRIMARY KEY,
+  CustomerName VARCHAR(255)
+);
+
+-- Transactions Table
+CREATE TABLE Transactions (
+  TransactionID INT PRIMARY KEY,
+  Amount DECIMAL(10, 2),
+  PaymentMode VARCHAR(255),
+  TransactionDate DATE
+);
+
+-- Feedback Table
+CREATE TABLE Feedback (
+  FeedbackID INT PRIMARY KEY,
+  OrderID INT FOREIGN KEY REFERENCES Orders(OrderID),
+  FeedbackText TEXT,
+  Rating INT
+);
